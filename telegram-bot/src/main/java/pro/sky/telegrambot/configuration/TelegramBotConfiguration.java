@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
+@EnableScheduling
 public class TelegramBotConfiguration {
 
     @Value("${telegram.bot.token}")
@@ -18,5 +19,3 @@ public class TelegramBotConfiguration {
         bot.execute(new DeleteMyCommands());
         return bot;
     }
-
-}
